@@ -1,20 +1,3 @@
-﻿:: Set install day to every day (0)
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" ^
-/v ScheduledInstallDay ^
-/t REG_DWORD ^
-/d 0 ^
-/f
-
-:: Enable automatic updates (0 = enabled)
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" ^
-/v NoAutoUpdate ^
-/t REG_DWORD ^
-/d 0 ^
-/f
-
-:: Set update behavior (4 = auto download + scheduled install)
-reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" ^
-/v AUOptions ^
-/t REG_DWORD ^
-/d 4 ^
-/f
+﻿reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v ScheduledInstallDay /t REG_DWORD /d 0 /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v NoAutoUpdate /t REG_DWORD /d 0 /f
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" /v AUOptions /t REG_DWORD /d 4 /f
